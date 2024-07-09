@@ -1,15 +1,20 @@
 function Navigation() {
   return (
     <div>
-      <nav className="nav-bar">
-        <div className="nav-line1">
-          <div className="nav-group1">
-            <div className="nav-links1">
+      <nav className="m-0 p-o box-border">
+        <div className="bg-[#183d3d] text-white flex justify-between items-center p-2.5">
+          <div className="flex items-center gap-5">
+            <div className="text-white font-poppins text-xl p-2.5 no-underline hover:text-sky-300">
               <a href="/Lofin/Register">Login/Register</a>
             </div>
-            <a href="/">fashionflare</a>
+            <a
+              href="/"
+              className="text-2xl font-bold italic mx-5 p-2.5 absolute left-1/2 transform -translate-x-1/2"
+            >
+              fashionflare
+            </a>
           </div>
-          <div className="Search">
+          <div className="flex ml-auto items-center gap-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -27,9 +32,12 @@ function Navigation() {
               <path d="m21 21-4.3-4.3" />
             </svg>
           </div>
-          <div className="Cart-section">
-            <a href="/Cart" className="Cart-link">
-              <div className="Cart-icon">
+          <div className="flex items-center gap-5">
+            <a
+              href="/Cart"
+              className="text-white p-2.5 no-underline hover:text-sky-300"
+            >
+              <div className="flex items-center gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -50,9 +58,12 @@ function Navigation() {
               </div>
             </a>
           </div>
-          <div className="Wishlist-section">
-            <a href="/Whishlist" className="Wishlist-link">
-              <div className="Wishlist-icon">
+          <div className="flex items-center gap-5">
+            <a
+              href="/Whishlist"
+              className="text-white p-2.5 no-underline hover:text-sky-300"
+            >
+              <div className="flex items-center gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -72,14 +83,39 @@ function Navigation() {
             </a>
           </div>
         </div>
-        <div className="nav-line2">
-          <div className="nav-group2">
-            <div className="nav-links2">
-              <a href="/Home">Home</a>
-              <a href="Shop">Shop</a>
-              <a href="/Vachers">Vachers</a>
-              <a href="/Abpot Us">About Us</a>
-              <a href="/Countact Us">Countact Us</a>
+        <div className="bg-white flex items-center justify-center font-poppins text-base p-2.5">
+          <div className="flex items-center gap-5">
+            <div>
+              <a
+                href="/Home"
+                class="text-black no-underline px-5 font-poppins text-base hover:text-sky-300"
+              >
+                Home
+              </a>
+              <a
+                href="Shop"
+                class="text-black no-underline px-5 font-poppins text-base hover:text-sky-300"
+              >
+                Shop
+              </a>
+              <a
+                href="/Vachers"
+                class="text-black no-underline px-5 font-poppins text-base hover:text-sky-300"
+              >
+                Voucher
+              </a>
+              <a
+                href="/Abpot Us"
+                class="text-black no-underline px-5 font-poppins text-base hover:text-sky-300"
+              >
+                About Us
+              </a>
+              <a
+                href="/Countact Us"
+                class="text-black no-underline px-5 font-poppins text-base hover:text-sky-300"
+              >
+                Contact Us
+              </a>
             </div>
           </div>
         </div>
