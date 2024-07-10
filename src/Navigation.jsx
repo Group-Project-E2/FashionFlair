@@ -1,4 +1,14 @@
+import React, { useState, useEffect } from "react";
 function Navigation() {
+  const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(false);
+
+  const toggleSearchBox = () => {
+    setIsSearchBoxVisible(!isSearchBoxVisible);
+  };
+
+  const closeSearchBox = () => {
+    setIsSearchBoxVisible(false);
+  };
   return (
     <div>
       <nav className="m-0 p-o box-border">
@@ -15,22 +25,45 @@ function Navigation() {
             </a>
           </div>
           <div className="flex ml-auto items-center gap-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              g
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-search"
+            <button
+              onClick={toggleSearchBox}
+              aria-label="Search"
+              className="mr-4 hover:text-sky-300"
             >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.3-4.3" />
-            </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                g
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-search"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </button>
+            {isSearchBoxVisible && (
+              <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+                <div className="bg-white p-4 rounded shadow-lg max-w-md">
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="p-2 border border-gray-300 text-black rounded w-full"
+                  />
+                  <button
+                    onClick={closeSearchBox}
+                    className="p-2 bg-gray-200 rounded mt-2 w-full text-black"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
           <div className="flex items-center gap-5">
             <a
