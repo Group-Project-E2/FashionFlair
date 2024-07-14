@@ -121,31 +121,31 @@ function Navigation() {
             <div>
               <a
                 href="/Home"
-                class="text-black no-underline px-5 font-poppins text-base hover:text-sky-300"
+                class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Home
               </a>
               <a
                 href="Shop"
-                class="text-black no-underline px-5 font-poppins text-base hover:text-sky-300"
+                class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Shop
               </a>
               <a
                 href="/Vachers"
-                class="text-black no-underline px-5 font-poppins text-base hover:text-sky-300"
+                class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Voucher
               </a>
               <a
                 href="/Abpot Us"
-                class="text-black no-underline px-5 font-poppins text-base hover:text-sky-300"
+                class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 About Us
               </a>
               <a
                 href="/Countact Us"
-                class="text-black no-underline px-5 font-poppins text-base hover:text-sky-300"
+                class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Contact Us
               </a>
