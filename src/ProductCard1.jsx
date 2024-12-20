@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProductCard(props) {
+function ProductCard1(props) {
   console.log(props);
   return (
     <div className="h-[600px] relative">
@@ -21,4 +21,4 @@ function ProductCard(props) {
   );
 }
 
-export default ProductCard;
+export default ProductCard1;
