@@ -133,10 +133,10 @@ function Navigation() {
                 Shop
               </Link>
               <Link
-                to="/Vachers"
+                to="/Vouchers"
                 class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
-                Voucher
+                Vouchers
               </Link>
               <Link
                 to="/Abpot Us"
