@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 function Navigation() {
   const [isSearchBoxVisible, setIsSearchBoxVisible] = useState(false);
@@ -17,12 +18,12 @@ function Navigation() {
             <div className="text-white font-poppins text-xl p-2.5 no-underline hover:text-sky-300">
               <a href="/Lofin/Register">Login/Register</a>
             </div>
-            <a
-              href="/"
+            <Link
+              to="/"
               className="text-2xl font-bold italic mx-5 p-2.5 absolute left-1/2 transform -translate-x-1/2"
             >
               fashionflare
-            </a>
+            </Link>
           </div>
           <div className="flex ml-auto items-center gap-1">
             <button
@@ -66,8 +67,8 @@ function Navigation() {
             )}
           </div>
           <div className="flex items-center gap-5">
-            <a
-              href="/Cart"
+            <Link
+              to="/Cart"
               className="text-white p-2.5 no-underline hover:text-sky-300"
             >
               <div className="flex items-center gap-1">
@@ -89,11 +90,11 @@ function Navigation() {
                 </svg>
                 <span>Cart</span>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="flex items-center gap-5">
-            <a
-              href="/Whishlist"
+            <Link
+              to="/Whishlist"
               className="text-white p-2.5 no-underline hover:text-sky-300"
             >
               <div className="flex items-center gap-1">
@@ -113,42 +114,42 @@ function Navigation() {
                 </svg>
                 <span>Wishlist</span>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="bg-white flex items-center justify-center font-poppins text-base p-2.5">
           <div className="flex items-center gap-5">
             <div>
-              <a
-                href="/Home"
+              <Link
+                to="/Home"
                 class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Home
-              </a>
-              <a
-                href="Shop"
+              </Link>
+              <Link
+                to="/Shop"
                 class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Shop
-              </a>
-              <a
-                href="/Vachers"
+              </Link>
+              <Link
+                to="/Vachers"
                 class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Voucher
-              </a>
-              <a
-                href="/Abpot Us"
+              </Link>
+              <Link
+                to="/Abpot Us"
                 class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 About Us
-              </a>
-              <a
-                href="/Countact Us"
+              </Link>
+              <Link
+                to="/Countact Us"
                 class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Contact Us
-              </a>
+              </Link>
             </div>
           </div>
         </div>
