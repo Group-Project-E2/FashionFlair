@@ -11,7 +11,7 @@ import { FormHelperText } from '@mui/material';
 
 export default function MyPasswordField(props) {
     const [showPassword, setShowPassword] = React.useState(false);
-    const { label, name, control } = props
+    const { label, name, control, id } = props
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -37,7 +37,7 @@ export default function MyPasswordField(props) {
                 <FormControl variant="outlined" className='w-full'>
                     <InputLabel htmlFor="outlined-adornment-password">{label}</InputLabel>
                     <OutlinedInput //represent input that user going to make
-                        id="outlined-adornment-password"
+                        id={id}
                         onChange={onChange}
                         value={value}
                         error={!!error}
