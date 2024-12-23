@@ -1,15 +1,13 @@
 import React from 'react';
-import locationImgFooter from "./assets/locationImgFooter.svg";
-import mailImgFooter from "./assets/mailImgFooter.svg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faXTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faLocationDot, faEnvelope, faGlobe, faPhone } from '@fortawesome/free-solid-svg-icons';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     // add href links
     <footer className="bg-gray-100 p-10">
-      <div className='flex flex-row gap-12'>
+      <div className='flex flex-col md:flex-row gap-12'>{/*mobile-> col, tab and above-> row*/ }
 
         <div className='flex flex-col w-full gap-8 '>
           <div>
@@ -18,7 +16,7 @@ const Footer = () => {
 
           <div>
             <p className="text-gray-600 w-full">
-            Fashion Flare is a modern basics brand based in Sri Lanka. We focus on quality and comfort, providing versatile everyday wear that keeps you confident and at ease throughout the day.
+              Fashion Flare is a modern basics brand based in Sri Lanka. We focus on quality and comfort, providing versatile everyday wear that keeps you confident and at ease throughout the day.
             </p>
           </div>
           {/* Social Media Icons */}
@@ -48,12 +46,24 @@ const Footer = () => {
         <div className='flex flex-col w-full  gap-4'>
           <h3 className="text-2xl font-semibold text-green-800">Category</h3>
           <div className="text-1xl font-semibold text-green-800">
-            <h6>Women</h6>
-            <h6>Men</h6>
-            <h6>Kids</h6>
-            <h6>Sportswear</h6>
-            <h6>Shoes</h6>
-            <h6>Bags</h6>
+            <h6>
+               <Link to="/women">Women </Link>
+            </h6>
+            <h6>
+               <Link to="/men">Men </Link>
+            </h6>
+            <h6>
+               <Link to="/kids">Kids </Link>
+            </h6>
+            <h6>
+               <Link to="/sportwear">Sportswear </Link>
+            </h6>
+            <h6>
+               <Link to="/shoes">Shoes </Link>
+            </h6>
+            <h6>
+               <Link to="/bags">Bags </Link>
+            </h6>
           </div>
         </div>
 
@@ -61,24 +71,30 @@ const Footer = () => {
           <h6 className="text-2xl font-semibold text-green-800">Home</h6>
 
           <div className="text-1xl font-semibold text-green-800">
-            <h6>Shop</h6>
-            <h6>Collection</h6>
-            <h6>About Us</h6>
-            <h6>Contact Us</h6>
-
+            <h6>
+               <Link to="/shop">Shop </Link>
+            </h6>
+            <h6>
+               <Link to="/collection">Collection </Link>
+            </h6>
+            <h6>
+               <Link to="/aboutUs">About Us </Link>
+            </h6>
+            <h6>
+               <Link to="/contactUs">Contact Us </Link>
+            </h6>
           </div>
-         
         </div>
 
         <div className='flex flex-col w-full gap-4'>
           {/*icons on the right side of the footer,here*/}
           <div className='flex flex-row gap-4'>
             {/*map icon*/}
-            <FontAwesomeIcon icon={faLocationDot} size="lg" className="text-green-800"   stroke-width="1.5"  class="size-6" />
+            <FontAwesomeIcon icon={faLocationDot} size="lg" className="text-green-800 size-6" strokeWidth="1.5" />
             <div className='text-1xl font-semibold text-green-800'>
               <h4>Store Address</h4>
               <div>
-                <h6>No 10B, Kirigalpotha, Matale.</h6>
+                <h6>10B, Peradeniya,Kandy.</h6>
               </div>
             </div>
 
@@ -87,7 +103,7 @@ const Footer = () => {
 
           <div className='flex flex-row gap-4'>
 
-          <FontAwesomeIcon icon={faEnvelope} size="lg" className="text-green-800" stroke-width="1.5"   class="size-6" />
+            <FontAwesomeIcon icon={faEnvelope} size="lg" className="text-green-800 size-6" strokeWidth="1.5" />
             <div className='text-1xl font-semibold text-green-800'>
               <h4>Mail us</h4>
               <div>
@@ -99,12 +115,12 @@ const Footer = () => {
           </div>
 
           <div className='flex flex-row gap-4'>
-            <FontAwesomeIcon icon={faGlobe} size="lg" className="text-green-800" class="size-6" />
+            <FontAwesomeIcon icon={faGlobe} size="lg" className="text-green-800 size-6"/>
             <div className='text-1xl font-semibold text-green-800'>
               <h4>Website</h4>
               <div>
-              <a href="http://localhost:5173/" aria-label="Fashion Flare lk" target="_blank">
-                <h6>fashionflare.lk</h6>
+                <a href="http://localhost:5173/" aria-label="Fashion Flare lk" target="_blank">
+                  <h6>fashionflare.lk</h6>
                 </a>
               </div>
             </div>
@@ -114,7 +130,7 @@ const Footer = () => {
 
 
           <div className='flex flex-row gap-4' >
-            <FontAwesomeIcon icon={faPhone} size="lg" className="text-green-800"  class="size-6"/>
+            <FontAwesomeIcon icon={faPhone} size="lg" className="text-green-800 size-6" />
             <div className='text-1xl font-semibold text-green-800'>
               <h4>Call Us</h4>
               <div>
