@@ -139,13 +139,13 @@ function Navigation() {
                 Vouchers
               </Link>
               <Link
-                to="/Abpot Us"
+                to="/AboutUs"
                 class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 About Us
               </Link>
               <Link
-                to="/Countact Us"
+                to="/ContactUs"
                 class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Contact Us
