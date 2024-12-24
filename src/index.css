@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-platinum{
+    background-color: #ECE6E6;
+}

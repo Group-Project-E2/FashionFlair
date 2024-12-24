@@ -38,11 +38,11 @@ function Navigation() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
+                strokeWidth="2"
                 g
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="lucide lucide-search"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="lucide lucide-search"
               >
                 <circle cx="11" cy="11" r="8" />
                 <path d="m21 21-4.3-4.3" />
@@ -79,10 +79,10 @@ function Navigation() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-shopping-cart"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-shopping-cart"
                 >
                   <circle cx="8" cy="21" r="1" />
                   <circle cx="19" cy="21" r="1" />
@@ -105,10 +105,10 @@ function Navigation() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-heart"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-heart"
                 >
                   <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                 </svg>
@@ -122,31 +122,31 @@ function Navigation() {
             <div>
               <Link
                 to="/Home"
-                class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
+                className="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Home
               </Link>
               <Link
                 to="/Shop"
-                class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
+                className="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Shop
               </Link>
               <Link
                 to="/Vachers"
-                class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
+                className="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Voucher
               </Link>
               <Link
                 to="/Abpot Us"
-                class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
+                className="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 About Us
               </Link>
               <Link
                 to="/Countact Us"
-                class="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
+                className="text-black text-[20px] no-underline px-5 font-poppins text-base hover:text-sky-300"
               >
                 Contact Us
               </Link>
