@@ -20,7 +20,7 @@ function ProductCard1(props) {
 
   {/* Second Row: Price and Button */}
   <div className="flex flex-wrap items-center justify-between gap-4 mt-2">
-    <p className="text-md md:text-lg text-gray-600">{props.price}</p>
+    <p className="text-md md:text-lg text-gray-600">Rs.{props.price}</p>
     <button
       type="button"
       className="border-2 border-[#5C8374] px-4 py-2 text-sm md:text-lg rounded-lg font-medium hover:bg-black hover:text-white transition"

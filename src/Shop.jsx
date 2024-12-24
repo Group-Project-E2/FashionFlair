@@ -9,7 +9,7 @@ function Shop() {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get('http://localhost:8000/products/');
-      
+
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
       const entries = urlParams.entries();
@@ -17,14 +17,14 @@ function Shop() {
       const categoryType = urlParams.get('type');
       console.log(categoryType);
 
-      
-        if (categoryType){
-          isCategoryAvailable = true;
-          setProducts(response.data.filter(product => product.categoryId.toString() === categoryType));
-        }
-        
-      
-      if (isCategoryAvailable === false){
+
+      if (categoryType) {
+        isCategoryAvailable = true;
+        setProducts(response.data.filter(product => product.categoryId.toString() === categoryType));
+      }
+
+
+      if (isCategoryAvailable === false) {
         setProducts(response.data);
       }
 
@@ -38,14 +38,14 @@ function Shop() {
       <section className="flex-1 p-6 lg:p-10 bg-platinum">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-10">
           {
-          products.map((el) => (
-            <ProductCard1
-              key={el.id}
-              image={el.productImage}
-              name={el.productName}
-              price={el.price}
-            />
-          ))}
+            products.map((el) => (
+              <ProductCard1
+                key={el.id}
+                image={el.productImage}
+                name={el.productName}
+                price={el.price}
+              />
+            ))}
         </div>
       </section>
 
@@ -54,12 +54,12 @@ function Shop() {
         <h2 className="text-xl lg:text-2xl font-bold mb-4">Categories</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {/* Below object array must have the display name as 'label' and DB Category name as 'value' */}
-          {[{label:"Women's Wear", value: "2"}, {label:"Men's Wear", value:"1"}, {label:"Kid's Wear", value:"kidsware"}, {label:"Sport Wear", value:"sportsware"}, {label:"Foot Wear", value:"footware"}, {label:"All", value:""}].map(
+          {[{ label: "Women's Wear", value: "2" }, { label: "Men's Wear", value: "1" }, { label: "Kid's Wear", value: "3" }, { label: "Sport Wear", value: "4" }, { label: "Foot Wear", value: "5" }, { label: "All", value: "" }].map(
             (category, index) => (
               <button
                 key={index} onClick={(e) => {
                   e.preventDefault(); // Prevent default action
-                  category.value !== ""?window.location.href = `/Shop?type=${category.value}`:window.location.href = '/Shop'; // Set location
+                  category.value !== "" ? window.location.href = `/Shop?type=${category.value}` : window.location.href = '/Shop'; // Set location
                 }}
                 className="px-4 py-2 border-2 border-[#5C8374] bg-white text-black rounded shadow hover:bg-black hover:text-white transition"
               >
