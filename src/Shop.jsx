@@ -32,7 +32,7 @@ function Shop() {
   const handleCategoryClick = (categoryValue) => {
     setSelectedCategory(categoryValue); // Update selected category
     if (categoryValue) {
-      const filtered = products.filter((product) => product.categoryId.toString() === categoryValue);
+      const filtered = products.filter((product) => product.category_id.toString() === categoryValue);
       setFilteredProducts(filtered);
     } else {
       setFilteredProducts(products); // Show all products if "All" is selected
@@ -46,9 +46,10 @@ function Shop() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-10">
           {filteredProducts.map((el) => (
             <ProductCard1
-             key={el.id} 
-             image={el.productImage} 
-             name={el.productName} 
+             key={el.product_id} 
+             id={el.product_id}
+             image={el.product_main_image} 
+             name={el.product_name} 
              price={el.price} />
           ))}
         </div>
@@ -85,10 +86,10 @@ function Shop() {
             {offers.map((product, index) => (
               <img
                 key={index}
-                src={product.productImage}
+                src={product.product_main_image}
                 alt={`Offer Image ${index + 1}`}
                 className="w-full h-auto object-cover rounded cursor-pointer"
-                onClick={() => setSelectedImage(product.productImage)}
+                onClick={() => setSelectedImage(product.product_main_image)}
               />
             ))}
           </div>

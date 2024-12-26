@@ -16,8 +16,8 @@ function App() {
       <Routes>
         <Route path="/Home" element={[<Hero key="hero" />, <NewArrivals key="new-arrivals" />]} />
         <Route path="/Shop" element={<Shop />} />
-        <Route path='/productdetails' element={<ProductDetails />} />
-
+       {/* to view the productdetails */}
+        <Route path="/products/:product_id" element={<ProductDetails />} />
       </Routes>
 
     </Router>
