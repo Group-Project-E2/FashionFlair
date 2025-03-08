@@ -7,20 +7,25 @@ import Hero from "./Hero";
 import NewArrivals from "./NewArrivals";
 import Shop from "./Shop";
 import ProductDetails from "./ProductDetails";
-
+import CartPage from "./CartPage";
+import { CartProvider } from "./CartContext";
 
 function App() {
+  
   return (
+    
+    <CartProvider>
     <Router>
       <Navigation />
       <Routes>
         <Route path="/Home" element={[<Hero key="hero" />, <NewArrivals key="new-arrivals" />]} />
         <Route path="/Shop" element={<Shop />} />
-       {/* to view the productdetails */}
-        <Route path="/products/:product_id" element={<ProductDetails />} />
+        <Route path="/products/:product_id" element={<ProductDetails />} />{/* to view the productdetails */}
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
 
     </Router>
+    </CartProvider>
   );
 }
 

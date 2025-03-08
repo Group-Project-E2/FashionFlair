@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Import icons
 import StarDisplay from "./StarDisplay";
+import { useCart } from "./CartContext";
 
 const ProductDetails = () => {
   const { product_id } = useParams();
@@ -11,6 +12,8 @@ const ProductDetails = () => {
   const [relatedImages, setRelatedImages] = useState([]);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const [selectedSize, setSelectedSize] = useState(""); // Initial state for selected size
+  const { addToCart } = useCart();
   useEffect(() => {
     axios
       .get(`http://localhost:8000/products/${product_id}/`)
@@ -49,6 +52,11 @@ const ProductDetails = () => {
       (currentImageIndex - 1 + relatedImages.length) % relatedImages.length;
     setMainImage(relatedImages[prevIndex]?.photo || relatedImages[prevIndex]);
     setCurrentImageIndex(prevIndex);
+  };
+
+  // Function to handle size selection
+  const handleSizeChange = (e) => {
+    setSelectedSize(e.target.value);
   };
 
   if (!product) {
@@ -92,9 +100,8 @@ const ProductDetails = () => {
                   <img
                     key={index}
                     alt={`Thumbnail ${index + 1}`}
-                    className={`size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300 ${
-                      index === currentImageIndex ? "border-2 border-indigo-500 opacity-100" : ""
-                    }`}
+                    className={`size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300 ${index === currentImageIndex ? "border-2 border-indigo-500 opacity-100" : ""
+                      }`}
                     onClick={() =>
                       changeImage(img.photo || img, index)
                     }
@@ -112,8 +119,8 @@ const ProductDetails = () => {
             <h2 className="text-3xl font-bold mb-2">{product.product_name}</h2>
             <p className="text-gray-600 mb-4">SKU Number {product.product_id}</p>
             <div className="mb-4">
-              <span className="text-2xl font-bold mr-2">${product.price}</span>
-              <span className="text-gray-500 line-through">$399.99</span>
+              <span className="text-2xl font-bold mr-2">Rs.{product.price}</span>
+              {/* <span className="text-gray-500 line-through">$399.99</span> */}
               <div className="flex items-center mb-4">
                 <strong>Rating:</strong>{" "}
                 {<StarDisplay starCount={product.star_count} />}
@@ -125,11 +132,55 @@ const ProductDetails = () => {
                 {product.product_description}
               </p>
 
+              {/* Size Selection Dropdown (Added) */}
+              <div className="mb-4">
+                <label className="block text-gray-700 font-semibold mb-2">
+                  Select Size:
+                </label>
+                <select
+                  className="w-64 border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  value={selectedSize}
+                  onChange={handleSizeChange}
+                >
+                  <option value="" disabled>Select a size</option>
+                  {["S", "M", "L", "XL", "XXL"].map((sizeKey) => {
+                    const sizeData = product.sizes.find((s) => s.size === sizeKey);
+                    return (
+                      <option
+                        key={sizeKey}
+                        value={sizeKey}
+                        disabled={!sizeData || sizeData.stock_count <= 0} // Disable option if out of stock
+                      >
+                        {sizeData ? `${sizeData.size_display} (${sizeData.stock_count} left)` : `${sizeKey} (Out of stock)`}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+
+
+
               {/* Add to Cart and Wishlist Buttons */}
               <div className="flex space-x-4 mb-6">
-                <button className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700">
-                  Add to Cart
-                </button>
+                <button
+                  className="bg-[#183d3d] text-white px-6 py-2 rounded-md ]"
+                  // onClick={() => addToCart(product,1, selectedSize)}
+                  // disabled={!selectedSize}
+                  onClick={() => {
+                    const selectedSizeData = product.sizes.find((s) => s.size === selectedSize);
+                    if (!selectedSizeData) {
+                      alert("Please select a size.");
+                      return;
+                    }
+                    if (selectedSizeData.stock_count <= 0) {
+                      alert("This size is out of stock.");
+                      return;
+                    }
+                    addToCart(product, 1, selectedSize);
+                  }}
+                  disabled={!selectedSize}
+
+                >Add to Cart</button>
                 <button className="bg-gray-200 text-gray-800 px-6 py-2 rounded-md hover:bg-gray-300">
                   Wishlist
                 </button>

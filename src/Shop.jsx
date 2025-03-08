@@ -82,13 +82,13 @@ function Shop() {
         {/* Gallery Section */}
         <div className="mt-10">
           <h3 className="text-xl lg:text-2xl font-bold mb-4">Gallery</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4">
             {offers.map((product, index) => (
               <img
                 key={index}
                 src={product.product_main_image}
                 alt={`Offer Image ${index + 1}`}
-                className="w-full h-auto object-cover rounded cursor-pointer"
+                className="w-[200px] h-[200px] object-cover rounded cursor-pointer"
                 onClick={() => setSelectedImage(product.product_main_image)}
               />
             ))}
