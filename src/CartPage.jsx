@@ -1,8 +1,10 @@
 import React from 'react';
 import { useCart } from './CartContext';
+import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const { cartItems, updateCartItem, removeFromCart, loading, error } = useCart();
+  const navigate = useNavigate();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -62,8 +64,8 @@ const CartPage = () => {
                     Remove
                   </button>
                 </div>
-                <p>Price: Rs.{item.product.price}</p>
-                <p>Subtotal: Rs.{item.product.price * item.quantity}</p>
+                <p>Price: ${item.product.price}</p>
+                <p>Subtotal: ${item.product.price * item.quantity}</p>
               </div>
             </li>
              ); 
@@ -72,8 +74,10 @@ const CartPage = () => {
       )}
       {cartItems.length > 0 && (
           <div className = "mt-4">
-            <h3 className = "text-lg font-semibold">Total: Rs.{cartItems.reduce((total, item) => total + (item.product.price * item.quantity), 0)}</h3>
-            <button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Proceed to Checkout</button>
+            <h3 className = "text-lg font-semibold">Grand Total: ${cartItems.reduce((total, item) => total + (item.product.price * item.quantity), 0)}</h3>
+            <button className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
+            onClick={() => navigate("/billingdetails")}
+            >Proceed to Checkout</button>
           </div>
       )}
     </div>

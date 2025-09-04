@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard1 from "./ProductCard1";
+import { useNavigate } from "react-router-dom";
 
 function Shop() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(""); // Track selected category
   const [offers, setOffers] = useState([]); // State for products with offers
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,7 +81,7 @@ function Shop() {
           ))}
         </div>
 
-        {/* Gallery Section */}
+        {/* Offers Section */}
         <div className="mt-10">
           <h3 className="text-xl lg:text-2xl font-bold mb-4">Gallery</h3>
           <div className="grid grid-cols-3 gap-4">
@@ -89,7 +91,8 @@ function Shop() {
                 src={product.product_main_image}
                 alt={`Offer Image ${index + 1}`}
                 className="w-[200px] h-[200px] object-cover rounded cursor-pointer"
-                onClick={() => setSelectedImage(product.product_main_image)}
+                // onClick={() => setSelectedImage(product.product_main_image)}
+                onClick={() => navigate(`/products/${product.product_id}`)} // Navigate to product page
               />
             ))}
           </div>

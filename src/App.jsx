@@ -9,7 +9,9 @@ import Shop from "./Shop";
 import ProductDetails from "./ProductDetails";
 import CartPage from "./CartPage";
 import { CartProvider } from "./CartContext";
-
+import BillingDetails from "./BillingDetails";
+import Checkout from "./Checkout";
+import SuccessPayment from "./landing_pages/SuccessPayment.jsx"
 function App() {
   
   return (
@@ -22,6 +24,9 @@ function App() {
         <Route path="/Shop" element={<Shop />} />
         <Route path="/products/:product_id" element={<ProductDetails />} />{/* to view the productdetails */}
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/billingdetails" element={<BillingDetails/>}/>
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/paymentsuccess/:orderId" element={<SuccessPayment />} />
       </Routes>
 
     </Router>

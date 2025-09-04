@@ -119,7 +119,7 @@ const ProductDetails = () => {
             <h2 className="text-3xl font-bold mb-2">{product.product_name}</h2>
             <p className="text-gray-600 mb-4">SKU Number {product.product_id}</p>
             <div className="mb-4">
-              <span className="text-2xl font-bold mr-2">Rs.{product.price}</span>
+              <span className="text-2xl font-bold mr-2">${product.price}</span>
               {/* <span className="text-gray-500 line-through">$399.99</span> */}
               <div className="flex items-center mb-4">
                 <strong>Rating:</strong>{" "}
